@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA-OS | The Future of Computing</title>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-download {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .btn-download:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: radial-gradient(circle at center, #1e1b4b 0%, var(--darker) 70%);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 10%;
+            background-color: var(--dark);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--glass);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        /* Specs Section */
+        .specs {
+            padding: 5rem 10%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .specs-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 2rem;
+        }
+
+        .specs-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .specs-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .specs-list li::before {
+            content: "✓";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+
+        .specs-visual {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--glass), transparent);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--glass);
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplified for mobile */
+            .specs { flex-direction: column; }
+            .specs-text { padding-right: 0; margin-bottom: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">AURA-OS</div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#specs">Specs</a>
+            <a href="#download" class="btn-download">Download v1.0</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Experience the <br><span>Light of Intelligence</span></h1>
+        <p>AURA-OS is the next-generation operating system designed for speed, privacy, and seamless integration. Lightweight, powerful, and free forever.</p>
+        <a href="#download" class="btn-download" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Get AURA-OS</a>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2 class="section-title">Why AURA?</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>⚡ Hyper Speed</h3>
+                <p>Built on a micro-kernel architecture, AURA-OS boots in under 3 seconds and utilizes 40% less RAM than competitors.</p>
+            </div>
+            <div class="card">
+                <h3>🛡️ Ironclad Security</h3>
+                <p>Zero-trust architecture by default. Your data is encrypted locally and never sent to the cloud without permission.</p>
+            </div>
+            <div class="card">
+                <h3>🎨 Ethereal UI</h3>
+                <p>A glass-morphism interface that adapts to your environment. Fully customizable themes and widgets.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specs Section -->
+    <section id="specs" class="specs">
+        <div class="specs-text">
+            <h2 class="section-title" style="text-align: left;">System Requirements</h2>
+            <p>Designed to run on legacy hardware while supporting the latest tech.</p>
+            <ul class="specs-list">
+                <li><strong>Processor:</strong> 64-bit Dual Core 1.5GHz</li>
+                <li><strong>Memory:</strong> 2GB RAM (4GB Recommended)</li>
+                <li><strong>Storage:</strong> 10GB Free Space</li>
+                <li><strong>Graphics:</strong> OpenGL 3.3 Support</li>
+            </ul>
+        </div>
+        <div class="specs-visual">
+            <h3 style="color: var(--primary);">System Ready</h3>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" style="padding: 5rem 20px; text-align: center; background: var(--dark);">
+        <h2 style="margin-bottom: 1rem;">Ready to Upgrade?</h2>
+        <p style="margin-bottom: 2rem; color: #94a3b8;">Join 10,000+ users testing the future.</p>
+        <button onclick="startDownload()" class="btn-download" style="font-size: 1.2rem; padding: 1rem 3rem;">Download ISO (64-bit)</button>
+        <p id="download-status" style="margin-top: 1rem; color: var(--secondary); display: none;">Starting secure download...</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 AURA-OS Project. Open Source & Free.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="#" style="color: #64748b; text-decoration: none; margin: 0 10px;">Privacy</a> | 
+            <a href="#" style="color: #64748b; text-decoration: none; margin: 0 10px;">Documentation</a> | 
+            <a href="#" style="color: #64748b; text-decoration: none; margin: 0 10px;">GitHub</a>
+        </p>
+    </footer>
+
+    <script>
+        // --- JAVASCRIPT ---
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simulate Download
+        function startDownload() {
+            const status = document.getElementById('download-status');
+            const btn = document.querySelector('#download .btn-download');
+            
+            btn.style.opacity = '0.7';
+            btn.innerText = "Connecting...";
+            status.style.display = 'block';
+
+            setTimeout(() => {
+                btn.innerText = "Download Started";
+                btn.style.background = "#22c55e"; // Green color
+                status.innerText = "Your file (aura_os_v1.0.iso) is downloading.";
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
